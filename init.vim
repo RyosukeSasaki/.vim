@@ -142,20 +142,6 @@ let g:asyncomplete_auto_popup = 1
 let g:asyncomplete_auto_completeopt = 1
 let g:asyncomplete_auto_completeopt = 0
 
-
-
-:set rtp+=<SHARE_DIR>/merlin/vim
-let g:opamshare = substitute(system('opam config var share'),'\n$','','''')
-execute 'set rtp+=' . g:opamshare . '/merlin/vim'
-
-if executable('ocaml-language-server')
-  au User lsp_setup call lsp#register_server({
-	\ 'name': 'ocaml-language-server',
-	\ 'cmd': {server_info->[&shell, &shellcmdflag, 'opam config exec -- ocaml-language-server --stdio']},
-	\ 'whitelist': ['reason', 'ocaml'],
-	\ })
-endif
-
 function! s:on_lsp_buffer_enabled() abort
     setlocal omnifunc=lsp#complete
     setlocal signcolumn=yes

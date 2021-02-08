@@ -93,6 +93,9 @@ let g:dein#auto_recache = 1
 if argc() == 0
 	autocmd VimENTER * NERDTree
 endif 
+
+let g:python3_host_prog = $PYENV_ROOT . '/shims/python3'
+
 let NERDTreeShowHidden = 1
 map <C-n> :NERDTreeToggle<CR>
 let NERDTreeQuitOnOpen = 1

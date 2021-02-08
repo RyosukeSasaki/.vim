@@ -1,4 +1,4 @@
-sudo apt install neovim
+sudo apt install neovim curl
 sudo pip2 install neovim
 sudo pip3 install neovim
 
